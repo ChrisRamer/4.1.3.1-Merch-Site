@@ -20,20 +20,31 @@ function NewPotionForm(props) {
 					type="text"
 					name="name"
 					placeholder="Name"/>
+				<br></br>
+				<br></br>
 				<input
 					type="text"
 					name="description"
 					placeholder="Description"/>
-				$<input
+				<br></br>
+				<br></br>
+				$ <input
 					type="number"
 					name="price"
 					min="0.01"
 					step="0.01"
 					value="4.99"/>
+				<br></br>
+				<br></br>
 				<input
 					type="number"
-					name="quantity"/>
+					name="quantity"
+					value="1"/>
+				<br></br>
+				<br></br>
 				<button type="submit">Add potion!</button>
+				<br></br>
+				<br></br>
 			</form>
 		</React.Fragment>
 	)
