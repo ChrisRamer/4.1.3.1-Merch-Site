@@ -11,3 +11,42 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.panel {
+	background-color: rgb(51, 51, 51);
+	color: rgb(223, 223, 223);
+	margin-bottom: 10px;
+	border: 2px solid rgb(70, 70, 70);
+	border-radius: 5px;
+    padding: 2.5px 0px;
+	width: 500px;
+	text-align: center;
+}
+
+#potion-image  {
+	float: left;
+	margin: 1em;
+	width: 50px;
+}
+
+#potion-info {
+	margin-right: 5em;
+}
+
+#bottom-row {
+	display: flex;
+	justify-content: space-between;
+}
+
+#left-corner {
+	margin-left: 1em;
+}
+
+#middle {
+	margin-right: 1.75em;
+	color: grey;
+}
+
+#right-corner {
+	margin-right: 1em;
+}
