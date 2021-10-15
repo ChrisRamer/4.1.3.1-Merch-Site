@@ -6,6 +6,7 @@ import greenPotion from "./../img/green_potion.png";
 
 function Potion(props) {
 	let potionImg = redPotion;
+	let textColor = "red";
 	const outOfStock = props.quantity < 1;
 	const stockText = !outOfStock ? props.quantity + " in stock" : "out of stock";
 	const stockTextColor = !outOfStock ? "green" : "red";
@@ -14,9 +15,11 @@ function Potion(props) {
 
 	if (props.name.toLowerCase().startsWith("blue")) {
 		potionImg = bluePotion;
+		textColor = "#1c79fc";
 	}
 	else if (props.name.toLowerCase().startsWith("green")) {
 		potionImg = greenPotion;
+		textColor = "green";
 	}
 
 	return (
@@ -25,8 +28,8 @@ function Potion(props) {
 			<img src={potionImg} id="potion-image" alt="Icon for ' + props.name'" />
 
 			<div id="potion-info">
-				<h3>{props.name}</h3>
-				<i>{props.description}</i>
+				<h3 style={{color: textColor}}>{props.name}</h3>
+				<i style={{color: textColor}}>{props.description}</i>
 			</div>
 
 			<br></br>
