@@ -37,7 +37,7 @@ function Potion(props) {
 
 			<div id="bottom-row">
 				<div id="left-corner">
-					<b color={stockTextColor}>{stockText}</b>
+					<b style={{color: stockTextColor}}>{stockText}</b>
 					<br></br>
 					{restockBtn}
 				</div>
