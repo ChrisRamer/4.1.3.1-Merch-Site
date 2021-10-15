@@ -5,13 +5,18 @@ import PropTypes from "prop-types";
 function PotionList(props) {
 	return (
 		<React.Fragment>
-			{props.potionList.map((potion, index) =>
-				<Potion name={potion.name}
-					description={potion.description}
-					price={potion.price}
-					quantity={potion.quantity}
-					key={index} />
-			)}
+
+			<div class="grid-container">
+				{props.potionList.map((potion, index) =>
+					<div class="grid-item">
+						<Potion name={potion.name}
+							description={potion.description}
+							price={potion.price}
+							quantity={potion.quantity}
+							key={index} />
+					</div>
+				)}
+			</div>
 		</React.Fragment>
 	)
 }

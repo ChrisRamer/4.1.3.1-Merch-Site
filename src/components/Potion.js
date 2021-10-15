@@ -5,7 +5,7 @@ import bluePotion from "./../img/blue_potion.png";
 import greenPotion from "./../img/green_potion.png";
 
 function Potion(props) {
-	const potionImg = redPotion;
+	let potionImg = redPotion;
 	const outOfStock = props.quantity < 1;
 	const stockText = !outOfStock ? props.quantity + " in stock" : "out of stock";
 	const stockTextColor = !outOfStock ? "green" : "red";
