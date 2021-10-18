@@ -17,6 +17,10 @@ class AppControl extends React.Component {
 		}));
 	}
 
+	handleClickBuy = () => {
+		console.log("Bought potion");
+	}
+
 	handleAddingNewPotionToList = (newPotion) => {
 		const newMasterPotionList = this.state.masterPotionList.concat(newPotion);
 		this.setState({
@@ -33,7 +37,7 @@ class AppControl extends React.Component {
 			currentlyVisibleState = <NewPotionForm onNewPotionCreation={this.handleAddingNewPotionToList} />;
 			buttonText = "Return to potion list";
 		} else {
-			currentlyVisibleState = <PotionList potionList={this.state.masterPotionList} />;
+			currentlyVisibleState = <PotionList potionList={this.state.masterPotionList} onPotionPurchase={this.handleClickBuy}/>;
 			buttonText = "Add potion";
 		}
 

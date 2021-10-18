@@ -7,11 +7,12 @@ import greenPotion from "./../img/green_potion.png";
 function Potion(props) {
 	let potionImg = redPotion;
 	let textColor = "red";
+	let ownedCount = 0;
 	const outOfStock = props.quantity < 1;
 	const stockText = !outOfStock ? props.quantity + " in stock" : "out of stock";
 	const stockTextColor = !outOfStock ? "green" : "red";
 	const restockBtn = !outOfStock ? null : <button type="submit">Restock</button>;
-	const buyBtn = !outOfStock ? <button type="submit">Buy 1</button> : null;
+	const buyBtn = !outOfStock ? <button type="submit" onClick={props.handleClickBuy}>Buy 1</button> : null;
 
 	if (props.name.toLowerCase().startsWith("blue")) {
 		potionImg = bluePotion;
@@ -23,7 +24,7 @@ function Potion(props) {
 	}
 
 	return (
-		<div id="potion_section" className="panel">
+		<div id="potion_section" className="panel grid-item">
 
 			<img src={potionImg} id="potion-image" alt="Icon for ' + props.name'" />
 
@@ -42,7 +43,7 @@ function Potion(props) {
 					{restockBtn}
 				</div>
 				<div id="middle">
-					<i>You own 0</i>
+					<i>You own {ownedCount}</i>
 				</div>
 				<div id="right-corner">
 					<b>${props.price}</b>
@@ -59,7 +60,8 @@ Potion.propTypes = {
 	name: PropTypes.string,
 	description: PropTypes.string,
 	price: PropTypes.number,
-	quantity: PropTypes.number
+	quantity: PropTypes.number,
+	handleClickBuy: PropTypes.func
 }
 
 export default Potion;

@@ -3,19 +3,19 @@ import PropTypes from "prop-types";
 import React from "react";
 
 function NewPotionForm(props) {
-	function handleNewPotionForrmSubmission(event) {
+	function handleNewPotionFormSubmission(event) {
 		event.preventDefault();
 		props.onNewPotionCreation({
 			name: event.target.name.value,
 			description: event.target.description.value,
-			price: event.target.price.value,
-			quantity: event.target.quantity.value,
+			price: parseFloat(event.target.price.value),
+			quantity: parseInt(event.target.quantity.value),
 			id:v4()});
 	}
 
 	return (
 		<React.Fragment>
-			<form onSubmit={handleNewPotionForrmSubmission}>
+			<form onSubmit={handleNewPotionFormSubmission}>
 				<input
 					type="text"
 					name="name"
@@ -33,13 +33,13 @@ function NewPotionForm(props) {
 					name="price"
 					min="0.01"
 					step="0.01"
-					value="4.99"/>
+					defaultValue="4.99"/>
 				<br></br>
 				<br></br>
 				<input
 					type="number"
 					name="quantity"
-					value="1"/>
+					defaultValue="1"/>
 				<br></br>
 				<br></br>
 				<button type="submit">Add potion!</button>

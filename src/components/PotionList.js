@@ -6,15 +6,14 @@ function PotionList(props) {
 	return (
 		<React.Fragment>
 
-			<div class="grid-container">
+			<div className="grid-container">
 				{props.potionList.map((potion, index) =>
-					<div class="grid-item">
-						<Potion name={potion.name}
-							description={potion.description}
-							price={potion.price}
-							quantity={potion.quantity}
-							key={index} />
-					</div>
+					<Potion name={potion.name}
+						description={potion.description}
+						price={potion.price}
+						quantity={potion.quantity}
+						handleClickBuy={props.onPotionPurchase}
+						key={index} />
 				)}
 			</div>
 		</React.Fragment>
@@ -22,7 +21,8 @@ function PotionList(props) {
 }
 
 PotionList.propTypes = {
-	potionList: PropTypes.array
+	potionList: PropTypes.array,
+	onPotionPurchase: PropTypes.func
 }
 
 export default PotionList;
